@@ -1,0 +1,10 @@
+# Sample file, not to be placed in source control systems.
+
+version: "3"
+services:
+
+    sphinx:
+        environment:
+            # - MYSQL_ROOT_PASSWORD=supersecretpassword
+            - MYSQL_INDEXER_USER=indexer
+            - MYSQL_INDEXER_PASSWORD=s3cr3t_pa$$w0rd

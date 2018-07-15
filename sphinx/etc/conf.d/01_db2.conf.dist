@@ -1,0 +1,18 @@
+
+# inherited source example
+#
+# all the parameters are copied from the parent source,
+# and may then be overridden in this source definition
+source src2throttled : src1 {
+	sql_db = $DB # $DB variable is "db2" from filename or defined by $DATABASE_DB2 env variable when present
+	sql_ranged_throttle	= 100
+}
+
+# inherit index example
+#
+# this index inherits from test1 defined in '00_db1.conf.dist' 
+# and redefines source and path, thus working on a different DB
+index test2: test1 {
+	source			= src2throttled
+	path			= $SPHINX_DATA_PATH/test2
+}

@@ -1,0 +1,10 @@
+# Sample file, for dev environment
+
+version: "3"
+services:
+
+    sphinx:
+        restart: "no"
+        environment:
+            - DATABASE_DB1=my_app_db_dev
+            - DATABASE_DB2=- # ignore this DB in dev environment
